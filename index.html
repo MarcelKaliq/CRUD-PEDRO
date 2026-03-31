@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Builder - CRUD Hardware</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Monte sua <span class="neon-text">Maquina</span></h1>
+        </header>
+
+        <div id="relatorio-final" class="hidden">
+            <h3>Relatório de Hardware</h3>
+            <ul id="lista-pecas"></ul>
+        </div>
+
+        <main class="setup-wrapper">
+            <div class="side-menu left">
+                <div class="item-group">
+                    <div id="card-mobo" class="info-box hidden">
+                        <p id="dica-mobo" class="dica-texto"></p>
+                        <input type="text" id="input-mobo" placeholder="">
+                        <button class="ok-btn" onclick="instalarPeca('mobo')">OK</button>
+                        <p id="status-mobo" class="status-text"></p>
+                        <button id="btn-edit-mobo" class="edit-small-btn hidden" onclick="editarPeca('mobo')">✎ Editar</button>
+                    </div>
+                    <button class="btn-peça" onclick="showInfo('mobo')">PLACA-MÃE</button>
+                </div>
+
+                <div class="item-group">
+                    <div id="card-cpu" class="info-box hidden">
+                        <p id="dica-cpu" class="dica-texto"></p>
+                        <input type="text" id="input-cpu" placeholder="">
+                        <button class="ok-btn" onclick="instalarPeca('cpu')">OK</button>
+                        <p id="status-cpu" class="status-text"></p>
+                        <button id="btn-edit-cpu" class="edit-small-btn hidden" onclick="editarPeca('cpu')">✎ Editar</button>
+                    </div>
+                    <button class="btn-peça" onclick="showInfo('cpu')">CPU</button>
+                </div>
+
+                <div class="item-group">
+                    <div id="card-ram" class="info-box hidden">
+                        <p id="dica-ram" class="dica-texto"></p>
+                        <input type="text" id="input-ram" placeholder="">
+                        <button class="ok-btn" onclick="instalarPeca('ram')">OK</button>
+                        <p id="status-ram" class="status-text"></p>
+                        <button id="btn-edit-ram" class="edit-small-btn hidden" onclick="editarPeca('ram')">✎ Editar</button>
+                    </div>
+                    <button class="btn-peça" onclick="showInfo('ram')">RAM</button>
+                </div>
+            </div>
+
+            <div class="pc-center">
+                <img id="pc-display" src="assets/pcpuroc.png" alt="PC Case" class="pc-image">
+                <div class="final-actions">
+                    <button id="btn-reset" class="reset-btn hidden" onclick="resetarTudo()">RECOMEÇAR SETUP</button>
+                    <button id="btn-ligar" class="ligar-btn hidden" onclick="ligarPC()">LIGAR SYSTEM</button>
+                </div>
+            </div>
+
+            <div class="side-menu right">
+                <div class="item-group">
+                    <button class="btn-peça" onclick="showInfo('storage')">ARMAZENAMENTO</button>
+                    <div id="card-storage" class="info-box hidden">
+                        <p id="dica-storage" class="dica-texto"></p>
+                        <input type="text" id="input-storage" placeholder="">
+                        <button class="ok-btn" onclick="instalarPeca('storage')">OK</button>
+                        <p id="status-storage" class="status-text"></p>
+                        <button id="btn-edit-storage" class="edit-small-btn hidden" onclick="editarPeca('storage')">✎ Editar</button>
+                    </div>
+                </div>
+
+                <div class="item-group">
+                    <button class="btn-peça" onclick="showInfo('psu')">FONTE</button>
+                    <div id="card-psu" class="info-box hidden">
+                        <p id="dica-psu" class="dica-texto"></p>
+                        <input type="text" id="input-psu" placeholder="">
+                        <button class="ok-btn" onclick="instalarPeca('psu')">OK</button>
+                        <p id="status-psu" class="status-text"></p>
+                        <button id="btn-edit-psu" class="edit-small-btn hidden" onclick="editarPeca('psu')">✎ Editar</button>
+                    </div>
+                </div>
+
+                <div class="item-group">
+                    <button class="btn-peça" onclick="showInfo('gpu')">GPU</button>
+                    <div id="card-gpu" class="info-box hidden">
+                        <p id="dica-gpu" class="dica-texto"></p>
+                        <input type="text" id="input-gpu" placeholder="">
+                        <button class="ok-btn" onclick="instalarPeca('gpu')">OK</button>
+                        <p id="status-gpu" class="status-text"></p>
+                        <button id="btn-edit-gpu" class="edit-small-btn hidden" onclick="editarPeca('gpu')">✎ Editar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

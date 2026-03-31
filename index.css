@@ -1,0 +1,210 @@
+:root {
+    --bg-color: #050505;
+    --neon-blue: #00d4ff;
+    --dark-blue: #005f73;
+    --text-color: #e0e0e0;
+    --neon-red: #ff4b4b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.setup-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+.item-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.left .item-group { justify-content: flex-end; }
+.right .item-group { justify-content: flex-start; }
+
+
+.info-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-blue);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px var(--neon-blue);
+    min-width: 220px;
+    position: relative;
+    text-align: left;
+}
+
+
+.info-box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 8px var(--neon-blue);
+}
+
+.left .info-box::after { right: -32px; }
+.right .info-box::after { left: -32px; }
+
+
+.btn-peça {
+    background: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 180px;
+    text-transform: uppercase;
+}
+
+.btn-peça:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.pc-center {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.pc-image {
+    width: 450px;
+    filter: drop-shadow(0 0 20px var(--dark-blue));
+}
+
+
+input {
+    width: 100%;
+    background: #111;
+    border: 1px solid var(--dark-blue);
+    color: white;
+    padding: 8px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.ok-btn {
+    background: var(--neon-blue);
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.status-text {
+    font-family: monospace;
+    color: var(--neon-blue);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* Reset Botão */
+.reset-btn {
+    margin-top: 20px;
+    background: var(--neon-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--neon-red);
+}
+
+.hidden { display: none !important; }
+
+.dica-texto {
+    font-size: 11px;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--dark-blue);
+    padding-bottom: 5px;
+    opacity: 0.8;
+}
+#relatorio-final {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--neon-blue);
+    padding: 20px;
+    margin: 0 auto 30px auto; 
+    max-width: 900px; 
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+#relatorio-final h3 {
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--neon-blue);
+    text-align: center;
+}
+
+#lista-pecas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#lista-pecas li {
+    padding: 8px;
+    border-left: 3px solid var(--neon-blue);
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+}
